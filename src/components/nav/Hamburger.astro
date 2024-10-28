@@ -1,0 +1,75 @@
+<button
+  class={`button-three ${Astro.props.class}`}
+  aria-controls="primary-navigation"
+  aria-expanded="false"
+  aria-label="Abrir menú de navegación en teléfono"
+>
+  <svg
+    stroke="var(--button-color)"
+    fill="none"
+    class="hamburger"
+    viewBox="-10 -10 120 120"
+    width="85"
+    aria-hidden="true"
+  >
+    <path
+      class="line"
+      stroke-width="6"
+      stroke-linejoin="round"
+      d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"
+    >
+    </path>
+  </svg>
+</button>
+
+<style>
+  .button-three {
+    --button-color: black;
+    overflow: hidden;
+  }
+
+  .button-three .hamburger {
+    transition:
+      translate 1s,
+      rotate 1s;
+  }
+
+  .button-three[aria-expanded='true'] .hamburger {
+    translate: 10px -10px;
+    rotate: 0.125turn;
+  }
+
+  .button-three .line {
+    transition: 1s;
+    stroke-dasharray: 60 31 60 300;
+  }
+
+  .button-three[aria-expanded='true'] .line {
+    stroke-dasharray: 60 105 60 300;
+    stroke-dashoffset: -90;
+  }
+</style>
+
+<script>
+  const button = document.querySelector('button');
+  const nav = document.getElementById('mobile-navigation');
+  const main = document.getElementById('main-container')
+
+  button.addEventListener('click', () => {
+    const currentState = button.getAttribute('data-state');
+
+    if (!currentState || currentState === 'closed') {
+      button.setAttribute('data-state', 'opened');
+      button.setAttribute('aria-expanded', 'true');
+      nav.classList.remove('hidden');
+      main.classList.add('hidden');
+      document.body.classList.add('overflow-hidden');
+    } else {
+      button.setAttribute('data-state', 'closed');
+      button.setAttribute('aria-expanded', 'false');
+      nav.classList.add('hidden');
+      main.classList.remove('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+  });
+</script>

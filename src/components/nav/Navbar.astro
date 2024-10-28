@@ -1,0 +1,19 @@
+---
+import Logo from "../../svgs/Logo.astro";
+import Hamburger from "./Hamburger.astro";
+import MobileNav from "./MobileNav.astro";
+---
+
+<nav class="px-8 py-4 flex justify-between items-center max-w-screen-xl mx-auto">
+    <Logo />
+
+    <ul class="gap-x-8 hidden text-lg sm:flex md:gap-x-16">
+        <li class="hover:text-primary-600 transition-colors"><a href="">Sobre Mí</a></li>
+        <li class="hover:text-primary-600 transition-colors"><a href="">Coaching</a></li>
+        <li><a class="bg-primary-500 hover:bg-primary-600 transition-colors px-4 py-2 rounded-md text-white" href="">Contacto</a></li>
+    </ul>
+
+    <Hamburger class="sm:hidden" />
+</nav>
+
+<MobileNav />

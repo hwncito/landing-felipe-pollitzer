@@ -1,0 +1,120 @@
+---
+import UnderlineSVG from '../../svgs/UnderlineSVG.astro';
+import Lightbulb from '../../svgs/Lightbulb.astro';
+import Circle from '../../svgs/Circle.astro';
+---
+
+<div
+  class="flex flex-col md:flex-row-reverse md:justify-center md:items-center"
+>
+  <h1
+    class="text-4xl text-center font-bold uppercase tracking-widest md:hidden"
+  >
+    Lidera tu
+    <span class="text-primary-600 relative">
+      vida
+      <UnderlineSVG
+        className="absolute right-0 bottom-1"
+        width="w-[100px]"
+        height="h-[3px]"
+      />
+      <UnderlineSVG
+        className="absolute right-0 -bottom-1"
+        width="w-[100px]"
+        height="h-[3px]"
+      />
+    </span>
+  </h1>
+
+  <div class="flex justify-center mt-12">
+    <div class="relative w-[414px] lg:w-[514px] xl:w-[614px] hero-image-container">
+      <img
+        src="/hero-image.webp"
+        alt="imagen de portada de Felipe Pollitzer"
+        width="876"
+        height="862"
+        class="hero-image relative z-50"
+      />
+      <Lightbulb class="absolute z-30 left-16 -top-12 w-36 h-48" />
+      <Circle
+        class="absolute z-30 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36"
+      />
+      <Circle
+        class="absolute z-30 left-1/2 top-1/2 -translate-y-32 translate-x-5 w-36 h-36"
+      />
+      <Circle
+        class="absolute z-30 left-1/2 top-1/2 -translate-y-16 translate-x-0 w-36 h-36"
+      />
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center mx-8">
+    <h1
+      class="hidden text-4xl self-start font-bold uppercase tracking-widest md:block"
+    >
+      Lidera tu
+      <span class="text-primary-600 relative">
+        vida
+        <UnderlineSVG
+          className="absolute right-0 bottom-1"
+          width="w-[100px]"
+          height="h-[3px]"
+        />
+        <UnderlineSVG
+          className="absolute right-0 -bottom-1"
+          width="w-[100px]"
+          height="h-[3px]"
+        />
+      </span>
+    </h1>
+    <h2 class="text-left mt-10 text-xl sm:text-2xl">
+      Coaching para alcanzar tus <br /><span class="text-primary-600"
+        >metas</span
+      > y vivir con <span class="text-primary-600">proposito</span>
+    </h2>
+    <button
+      class="w-[280px] sm:w-[340px] md:w-[200px] md:self-start text-lg mt-8 bg-primary-500 hover:bg-primary-600 transition-colors py-2 rounded-md text-white"
+      >Contacto</button
+    >
+  </div>
+</div>
+
+<style>
+  .hero-image {
+    mask-image: linear-gradient(black 85%, transparent);
+  }
+
+  .hero-image-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 270px;
+    width: 270px;
+    background: radial-gradient(
+      circle,
+      rgba(255, 229, 207, 0.6) 0%,
+      rgba(251, 171, 126, 0.8) 40%,
+      rgba(251, 171, 126, 1) 70%
+    );
+    border-radius: 50%;
+    filter: blur(10px);
+    transform: translate(-50%, -87%);
+    z-index: 0;
+    border-radius: 100%;
+  }
+
+  /* @media (min-width: 768px) {
+    .hero-image-container::after {
+      transform: translate(-46%, -29%);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-image-container::after {
+      height: 205px;
+      width: 205px;
+      transform: translate(-46%, -29%);
+    }
+  } */
+</style>
