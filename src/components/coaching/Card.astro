@@ -1,0 +1,24 @@
+---
+const { card } = Astro.props;
+---
+
+<div class="bg-white p-6 rounded-md card-container">
+  <h3 class="font-extrabold text-lg">
+    <span class="text-primary-600">{card.keyword}</span>
+    {card.title}
+  </h3>
+  <p class="text-gray-500 mt-8">{card.description}</p>
+  <p class="text-gray-500 mt-2">{card.subdescription}</p>
+  <button
+    class="bg-primary-500 hover:bg-primary-600 transition-colors px-4 py-2 rounded-md text-white mt-4"
+    >{card.button}</button
+  >
+</div>
+
+<style>
+  .card-container {
+    box-shadow: inset 0px 4px 4px 2px rgba(0, 0, 0, 0.25);
+    width: 306px;
+    height: 566px;
+  }
+</style>

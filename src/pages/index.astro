@@ -2,12 +2,16 @@
 import Hero from '../components/hero/Hero.astro';
 import Navbar from '../components/nav/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
+import Curve from '../svgs/Curve.astro';
+import Coaching from '../components/coaching/Coaching.astro';
 ---
 
 <Layout title="FP Coaching">
 	<Navbar	/>
-	<main id="main-container" class="animate-fade-in mt-6 md:mt-20 lg:mt-10 xl:mt-4 border">
+	<main id="main-container" class="relative animate-fade-in mt-6 md:mt-20 lg:mt-16">
 		<Hero />
 	</main>
+	<Curve />
+	<Coaching />
 </Layout>
 

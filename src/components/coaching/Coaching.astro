@@ -1,0 +1,40 @@
+---
+import Card from "./Card.astro";
+
+const cardContent = [
+  {
+    keyword: 'Explora',
+    title: 'tu potencial',
+    description:
+      'No es solo una llamada, es el primer paso hacia una vida más plena y auténtica.',
+    subdescription: 'Te invito a una charla para conectar y conocerte mejor.',
+    button: 'Explorar',
+  },
+  {
+    keyword: 'Fija',
+    title: 'objetivos',
+    description:
+      'No se trata solo de metas, sino de definir el camino hacia la vida que deseas.',
+    subdescription:
+      'Te invito a trazar un plan que te inspire a seguir adelante.',
+    button: 'Fijar',
+  },
+  {
+    keyword: 'Planifica',
+    title: 'la acción',
+    description: 'El puente entre tus sueños y tu realidad.',
+    subdescription:
+      'Diseñaremos un plan de acción claro para que cada paso que des te acerque más a tus metas.',
+    button: 'Accionar',
+  },
+];
+---
+
+<section class="bg-[#FFE5CF] py-20">
+  <h2 class="text-center text-4xl font-bold uppercase tracking-wide">
+    Coaching
+  </h2>
+  <div class="flex flex-col items-center justify-center mt-20 gap-y-10 md:flex-row md:gap-x-10 lg:gap-x-20">
+    {cardContent.map(card => <Card card={card} />)}
+  </div>
+</section>
