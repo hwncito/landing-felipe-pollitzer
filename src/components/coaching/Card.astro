@@ -2,17 +2,18 @@
 const { card } = Astro.props;
 ---
 
-<div class="bg-white p-6 rounded-md card-container">
-  <h3 class="font-extrabold text-lg">
+<div class="relative bg-white p-6 rounded-md card-container overflow-hidden">
+  <h3 class="font-black text-xl md:text-lg lg:text-xl mt-6 relative z-10">
     <span class="text-primary-600">{card.keyword}</span>
     {card.title}
   </h3>
-  <p class="text-gray-500 mt-8">{card.description}</p>
-  <p class="text-gray-500 mt-2">{card.subdescription}</p>
+  <p class="text-gray-600 mt-20 relative z-10 w-[150px]">{card.description}</p>
+  <!-- <p class="text-gray-600 mt-2 relative z-10 w-[180px]">{card.subdescription}</p> -->
   <button
-    class="bg-primary-500 hover:bg-primary-600 transition-colors px-4 py-2 rounded-md text-white mt-4"
+    class="bg-secondary-500 opacity-70 hover:opacity-100 transition-opacity w-[110px] py-2 rounded-md text-white mt-4 relative z-10"
     >{card.button}</button
   >
+  <img src={card.background} alt="background image of a girl" loading="lazy" class="fixed-image absolute bottom-0 -right-2 z-0" />
 </div>
 
 <style>
@@ -20,5 +21,11 @@ const { card } = Astro.props;
     box-shadow: inset 0px 4px 4px 2px rgba(0, 0, 0, 0.25);
     width: 306px;
     height: 566px;
-  }
+  } 
+
+  .fixed-image {
+  width: 307px;
+  height: 539px;
+  object-fit: cover;
+}
 </style>
