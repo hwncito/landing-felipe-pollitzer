@@ -1,0 +1,61 @@
+---
+import Plants from "../../svgs/Plants.astro";
+import Rectangle from "../../svgs/Rectangle.astro";
+import Waves from "../../svgs/Waves.astro";
+---
+
+<section class="relative flex flex-col justify-center items-center lg:flex-row mt-10 mb-20 mx-auto max-w-screen-xl">
+    <h2 class="text-4xl md:text-5xl font-black text-center text-secondary-500 lg:hidden uppercase tracking-wide">Sobre Mí</h2>
+    <div class="max-w-[504px] mx-4 basis-2/4 relative">
+      <div class="relative z-50">
+        <img
+            src="./about-image.webp"
+            loading="lazy"
+            alt="Retrato de Felipe Pollitzer en la seccion sobre mi"
+            class="mt-10 rounded-xl about-me-shadow"
+            width="504"
+            height="465"
+        />
+        <div class="absolute top-0 left-0 w-full h-full bg-[#FF885B] opacity-10 rounded-xl"></div>
+      </div>
+    </div>
+    </div>
+    <div class="mt-10 text-lg mx-4 sm:max-w-[504px] lg:mt-10 basis-2/4">
+      <h2 class="hidden font-black text-5xl text-left text-secondary-500 lg:block uppercase tracking-wide">Sobre Mí</h2>
+      <p class="lg:mt-8 text-[#33372C]">
+        ¡Hola! Soy Felipe Pollitzer, coach ontológico con ganas de acompañarte en
+        tu camino de transformación personal y profesional. Mi enfoque se basa en
+        la creencia de que todos tenemos el potencial de vivir una vida auténtica
+        y plena, y mi misión es ayudarte a descubrir y desbloquear ese potencial.
+      </p>
+      <p class="mt-2 text-[#33372C]">
+        Quiero ayudarte a identificar y superar los obstáculos internos que te
+        impiden avanzar. No se trata solo de alcanzar metas, sino de redefinir la
+        manera en que te relacionas contigo mismo y con el mundo.
+      </p>
+      <button
+        class="bg-secondary-500 opacity-70 hover:opacity-100 transition-opacity text-white w-full py-2 rounded-lg mt-8 text-xl  md:w-[180px] lg:mt-12 lg:w-[217px] lg:text-xl xl:mt-10"
+        >Hablemos</button
+      >
+    </div>
+    <Plants class="hidden lg:block absolute -bottom-52 w-[250px] left-0 xl:w-[321px] z-50" />
+    <Rectangle class="hidden md:block absolute opacity-10 left-6 -top-20 md:-top-32 lg:-top-40 w-[180px] z-0" fill="#FF885B" />
+    <Waves class="hidden md:block absolute w-[180px] right-6 md:-top-28 lg:-top-24 lg:w-[220px] z-0" />
+    <Rectangle class="hidden md:block absolute opacity-10 right-6 md:-bottom-60 lg:-bottom-60 w-[180px] z-0" fill="#FF885B" />
+    <Rectangle class="hidden md:block absolute opacity-10 right-36 md:-bottom-80 lg:-bottom-92 w-[120px] z-0" fill="#FF885B" />
+  </section>
+
+
+  <style>
+    .about-me-shadow {
+        filter: drop-shadow(0px 0px 10px #557C56);
+      
+    }
+
+    @media (min-width: 768px) {
+      .about-me-shadow {
+        filter: drop-shadow(-30px 30px #FF885B);
+      }
+    }
+  </style>
+  
