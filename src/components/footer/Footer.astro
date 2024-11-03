@@ -1,0 +1,43 @@
+---
+import Instagram from "../../svgs/Instagram.astro";
+import Linkedin from "../../svgs/Linkedin.astro";
+import Logo from "../../svgs/Logo.astro";
+import Whatsapp from "../../svgs/Whatsapp.astro";
+
+
+---
+
+<footer class="bg-[#2B2B2B] text-[#FFE5CF] py-10">
+  <div class="flex items-center justify-center gap-10 md:hidden">
+    <div class="flex flex-col gap-4 text-lg">
+      <a href="#main-container">Inicio</a>
+      <a href="#coaching-section">Coaching</a>
+    </div>
+    <div class="flex flex-col gap-4 text-lg">
+      <a href="#about-section">Sobre Mí</a>
+      <a href="#contact-section">Contacto</a>
+    </div>
+  </div>
+  <div class="flex justify-between mt-8 mx-6 md:mt-0 md:mx-10">
+    <span class="w-[176px] ">
+      <Logo fill="#FFE5CF" />
+    </span>
+
+    <div class="hidden items-center justify-center gap-10 md:flex">
+      <div class="flex flex-col gap-4 text-lg">
+        <a href="#main-container">Inicio</a>
+        <a href="#coaching-section">Coaching</a>
+      </div>
+      <div class="flex flex-col gap-4 text-lg">
+        <a href="#about-section">Sobre Mí</a>
+        <a href="#contact-section">Contacto</a>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-center gap-5">
+      <a target="_blank" href="https://wa.me/541133961603" aria-label="Contactar por WhatsApp"><Whatsapp stroke="#FFE5CF" /></a>
+    <a target="_blank" href="https://www.instagram.com/felipe.pollitzer/" aria-label="Visitar perfil de Instagram"><Instagram stroke="#FFE5CF" /></a>
+    <a target="_blank" href="https://www.linkedin.com/in/felipe-pollitzer-917586188/" aria-label="Visitar perfil de LinkedIn"><Linkedin stroke="#FFE5CF" /></a>
+    </div>
+  </div>
+</footer>
