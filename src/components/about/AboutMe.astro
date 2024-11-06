@@ -2,6 +2,7 @@
 import Plants from "../../svgs/Plants.astro";
 import Rectangle from "../../svgs/Rectangle.astro";
 import Waves from "../../svgs/Waves.astro";
+import Whatsapp from "../../svgs/Whatsapp.astro";
 ---
 
 <section class="relative flex flex-col justify-center items-center lg:flex-row mt-10 mb-20 mx-auto max-w-screen-xl">
@@ -33,10 +34,13 @@ import Waves from "../../svgs/Waves.astro";
         impiden avanzar. No se trata solo de alcanzar metas, sino de redefinir la
         manera en que te relacionas contigo mismo y con el mundo.
       </p>
-      <button
-        class="bg-secondary-500 opacity-70 hover:opacity-100 transition-opacity text-white w-full py-2 rounded-lg mt-8 text-xl  md:w-[180px] lg:mt-12 lg:w-[217px] lg:text-xl xl:mt-10"
-        >Hablemos</button
-      >
+      <div class="flex gap-4 md:self-start">
+        <button
+          class="bg-secondary-500 opacity-70 hover:opacity-100 transition-opacity text-white w-full py-2 rounded-lg mt-8 text-xl md:w-[180px] lg:mt-12 lg:w-[217px] lg:text-xl xl:mt-10"
+          >Hablemos</button
+        >
+        <a target="_blank" href="https://wa.me/541133961603" class="hidden border md:flex items-center justify-center px-4 py-1 mt-8 rounded-md lg:mt-12 xl:mt-10 hover:bg-gray-100 transition-colors cursor-pointer"><Whatsapp stroke="#2c3e50" class="w-[36px] h-[36px]" /></a>
+      </div>
     </div>
     <Plants class="hidden lg:block absolute -bottom-52 w-[250px] left-0 xl:w-[321px] z-50" />
     <Rectangle class="hidden md:block absolute opacity-10 left-6 -top-20 md:-top-32 lg:-top-40 w-[180px] z-0" fill="#FF885B" />

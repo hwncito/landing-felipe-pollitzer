@@ -35,15 +35,17 @@ const cardContent = [
 ];
 ---
 
-<section class="bg-[#FFE5CF] pt-20 pb-40 overflow-x-hidden">
-  <h2 class="text-center text-4xl md:text-5xl font-bold uppercase tracking-wide">
-    Coaching
-  </h2>
-  <div class="relative flex flex-col items-center justify-center mt-20 gap-y-10 md:flex-row md:gap-x-5 lg:gap-x-10 xl:gap-x-20">
-    <Rectangle class="absolute rotate-12 -top-10 md:-top-32 -left-40 bg-[#FF885B] opacity-10 rounded-3xl"/>
-    <Circle class="absolute -right-16 md:right-20 lg:right-72 xl:right-96 md:-top-40 fill-[#FF885B] opacity-10" stroke="none" />
-    <Rectangle class="absolute w-44 h-56 rotate-135 -bottom-28 right-60 xl:right-96 bg-[#FF885B] opacity-10 rounded-3xl"/>
-    {cardContent.map(card => <Card card={card} />)}
+<section class="bg-[#FFE5CF]">
+  <div class="pt-20 pb-40 max-w-screen-xl mx-auto">
+    <h2 class="text-center text-4xl md:text-5xl font-bold uppercase tracking-wide">
+      Coaching
+    </h2>
+    <div class="relative flex flex-col items-center justify-center mt-20 gap-y-10 md:flex-row md:gap-x-5 lg:gap-x-10 xl:gap-x-20">
+      <Rectangle class="absolute rotate-12 -top-10 md:-top-32 -left-40 bg-[#FF885B] opacity-10 rounded-3xl"/>
+      <Circle class="absolute -right-16 md:right-20 lg:right-72 xl:right-96 md:-top-40 fill-[#FF885B] opacity-10" stroke="none" />
+      <Rectangle class="absolute w-44 h-56 rotate-135 -bottom-28 right-60 xl:right-96 bg-[#FF885B] opacity-10 rounded-3xl"/>
+      {cardContent.map(card => <Card card={card} />)}
+    </div>
   </div>
 </section>
 

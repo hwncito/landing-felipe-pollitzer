@@ -2,6 +2,7 @@
 import UnderlineSVG from '../../svgs/UnderlineSVG.astro';
 import Lightbulb from '../../svgs/Lightbulb.astro';
 import Circle from '../../svgs/Circle.astro';
+import Whatsapp from '../../svgs/Whatsapp.astro';
 ---
 
 <div
@@ -81,10 +82,14 @@ import Circle from '../../svgs/Circle.astro';
         >metas</span
       > y vivir con <span class="text-primary-600">propósito</span>
     </h2>
-    <button
-      class="w-[280px] sm:w-[340px] md:w-[200px] md:self-start text-lg xl:text-xl mt-8 bg-primary-500 hover:bg-primary-600 transition-colors py-2 rounded-md text-white lg:mt-12"
-      >Contacto</button
-    >
+    <div class="flex gap-4 md:self-start">
+      <button
+        class="w-[280px] sm:w-[340px] md:w-[200px] md:self-start text-lg xl:text-2xl mt-8 bg-primary-500 hover:bg-primary-600 transition-colors py-2 rounded-md text-white lg:mt-12"
+        >Contacto</button
+      >
+      <a target="_blank" href="https://wa.me/541133961603" class="hidden border md:flex items-center justify-center px-4 py-1 mt-8 rounded-md lg:mt-12 hover:bg-gray-100 transition-colors cursor-pointer"><Whatsapp stroke="#2c3e50" class="w-[36px] h-[36px]" /></a>
+    </div>
+
   </div>
 </div>
 
