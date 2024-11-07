@@ -1,0 +1,31 @@
+---
+import Instagram from "../../svgs/Instagram.astro";
+import Mail from "../../svgs/Mail.astro";
+import Whatsapp from "../../svgs/Whatsapp.astro";
+---
+
+<div class="hidden lg:flex flex-col items-center justify-center basis-2/4">
+    <h3 class="text-3xl font-medium uppercase text-center">
+        ¡Nos encantaría escucharte!
+    </h3>
+    <ul class="flex flex-col gap-6 mt-8 text-xl font-extralight  text-[#2B2B2B]">
+      <li class="flex items-center gap-4">
+        <Mail class="w-10 h-10" />
+        <a href="mailto:felipepoli@hotmail.com.ar" class="hover:underline hover:text-[#1A1A1A] transition-all">
+            felipepoli@hotmail.com.ar
+        </a>
+      </li>
+      <li class="flex items-center gap-4">
+        <Whatsapp class="w-10 h-10" stroke="#2B2B2B" />
+        <a href="https://wa.me/541133961603" target="_blank" class="hover:underline hover:text-[#1A1A1A] transition-all">
+            +541133961603
+        </a>
+      </li>
+      <li class="flex items-center gap-4">
+        <Instagram class="w-10 h-10" stroke="#2B2B2B" />
+        <a href="https://www.instagram.com/felipe.pollitzer/" class="hover:underline hover:text-[#1A1A1A] transition-all">
+            @felipe.pollitzer
+        </a>
+      </li>
+    </ul>
+  </div>

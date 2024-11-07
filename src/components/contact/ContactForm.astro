@@ -48,7 +48,7 @@ import Whatsapp from "../../svgs/Whatsapp.astro";
 
 <form
   id="contact-form"
-  class="flex flex-col p-4 md:p-7 rounded-3xl border bg-[#FFFFFF] max-w-[510px] w-full basis-2/4"
+  class="flex flex-col p-4 md:p-7 rounded-3xl bg-[#FFFFFF] max-w-[510px] w-full basis-2/4 border border-[#2B2B2B]"
   novalidate
 >
   <label for="name" class="ml-2">Nombre</label>
@@ -76,13 +76,13 @@ import Whatsapp from "../../svgs/Whatsapp.astro";
     name="message"></textarea>
   <span id="message-error" class="text-xs text-red-600 mt-1 ml-2"></span>
 
-  <div class="flex items-center justify-between mt-4">
+  <div class="flex items-center justify-between lg:justify-end mt-4">
     <button
       type="submit"
-      class="px-8 py-2 rounded-lg text-white text-xl bg-primary-500 hover:bg-primary-600 transition-colors"
+      class="px-6 sm:px-10 py-2 rounded-lg text-white text-xl bg-[#2B2B2B] hover:bg-[#1A1A1A] transition-colors"
       >Enviar</button
     >
-    <div class="flex items-center justify-center gap-5">
+    <div class="flex lg:hidden items-center justify-center gap-5">
       <a
         target="_blank"
         href="https://wa.me/541133961603"

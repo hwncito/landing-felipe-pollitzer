@@ -9,10 +9,12 @@ const { card } = Astro.props;
   </h3>
   <p class="text-gray-600 mt-20 relative z-10 w-[150px]">{card.description}</p>
   <!-- <p class="text-gray-600 mt-2 relative z-10 w-[180px]">{card.subdescription}</p> -->
-  <button
-    class="bg-secondary-500 opacity-70 hover:opacity-100 transition-opacity w-[110px] py-2 rounded-md text-white mt-4 relative z-10"
-    >{card.button}</button
-  >
+  <a href="#contact-section">
+    <button
+      class="bg-secondary-500 opacity-70 hover:opacity-100 transition-opacity w-[110px] py-2 rounded-md text-white mt-4 relative z-10"
+      >{card.button}
+    </button>
+  </a>
   <img src={card.background} alt="background image of a girl" loading="lazy" class="fixed-image absolute bottom-0 -right-2 z-0" />
 </div>
 
