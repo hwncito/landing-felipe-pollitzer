@@ -1,7 +1,8 @@
 ---
-import Instagram from "../../svgs/Instagram.astro";
-import Linkedin from "../../svgs/Linkedin.astro";
-import Whatsapp from "../../svgs/Whatsapp.astro";
+import Instagram from '../../svgs/Instagram.astro';
+import Linkedin from '../../svgs/Linkedin.astro';
+import Tik from '../../svgs/Tik.astro';
+import Whatsapp from '../../svgs/Whatsapp.astro';
 
 // import MailSent from '../svgs/MailSent.astro';
 ---
@@ -29,6 +30,18 @@ import Whatsapp from "../../svgs/Whatsapp.astro";
     }
   }
 
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .spinner {
+    animation: spin 1s linear infinite;
+  }
+
   .show-toast {
     animation: slideInBottom 0.5s forwards;
   }
@@ -40,10 +53,15 @@ import Whatsapp from "../../svgs/Whatsapp.astro";
 
 <div
   id="toast"
-  class="hidden fixed bottom-4 right-4 p-6 bg-white rounded-lg flex items-center gap-4 border shadow-xl"
+  class="hidden fixed bottom-4 right-4 p-4 bg-white rounded-lg flex items-center gap-4 border border-gray-300 shadow-2xl"
 >
-  <!-- <MailSent /> -->
-  Mensaje enviado con éxito!
+  <div
+    class="inline-flex items-center justify-center flex-shrink-0 w-10 h-10 text-green-100 bg-green-700 rounded-lg"
+  >
+    <Tik />
+    <span class="sr-only">Check icon</span>
+  </div>
+  ¡Mensaje enviado con éxito!
 </div>
 
 <form
@@ -53,7 +71,7 @@ import Whatsapp from "../../svgs/Whatsapp.astro";
 >
   <label for="name" class="ml-2">Nombre</label>
   <input
-    class="p-2 rounded-lg border border-[#ccd0c5] focus:outline-dashed focus:outline-primary-400"
+    class="text-sm md:text-base p-2 rounded-lg border border-[#ccd0c5] focus:outline-dashed focus:outline-primary-400"
     type="text"
     id="name"
     name="name"
@@ -62,7 +80,7 @@ import Whatsapp from "../../svgs/Whatsapp.astro";
 
   <label for="email" class="ml-2 mt-4">Email</label>
   <input
-    class="p-2 rounded-lg border border-[#ccd0c5] focus:outline-dashed focus:outline-primary-400"
+    class="text-sm md:text-base p-2 rounded-lg border border-[#ccd0c5] focus:outline-dashed focus:outline-primary-400"
     type="email"
     id="email"
     name="email"
@@ -71,18 +89,30 @@ import Whatsapp from "../../svgs/Whatsapp.astro";
 
   <label for="message" class="ml-2 mt-4">Mensaje</label>
   <textarea
-    class="p-2 rounded-lg border border-[#ccd0c5] focus:outline-dashed focus:outline-primary-400 resize-none"
+    class="text-sm md:text-base p-2 rounded-lg border border-[#ccd0c5] focus:outline-dashed focus:outline-primary-400 resize-none"
     id="message"
     name="message"></textarea>
   <span id="message-error" class="text-xs text-red-600 mt-1 ml-2"></span>
 
   <div class="flex items-center justify-between lg:justify-end mt-4">
     <button
+      id="send-button"
       type="submit"
-      class="px-6 sm:px-10 py-2 rounded-lg text-white text-xl bg-[#2B2B2B] hover:bg-[#1A1A1A] transition-colors"
-      >Enviar</button
+      class="w-[120px] sm:w-[140px] flex items-center justify-center py-2 rounded-lg text-white text-xl bg-[#2B2B2B] hover:bg-[#1A1A1A] transition-colors"
     >
-    <div class="flex lg:hidden items-center justify-center gap-5">
+      <span id="send-text">Enviar</span>
+      <div
+        id="loading-spinner"
+        class="hidden spinner inline-block h-7 w-7 rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]"
+        role="status"
+      >
+        <span
+          class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+          >Loading...</span
+        >
+      </div></button
+    >
+    <div class="flex lg:hidden items-center justify-center gap-3 md:gap-5">
       <a
         target="_blank"
         href="https://wa.me/541133961603"
@@ -109,6 +139,13 @@ import Whatsapp from "../../svgs/Whatsapp.astro";
 
     const form = document.getElementById('contact-form') as HTMLFormElement;
     const toast = document.getElementById('toast') as HTMLDivElement;
+    const sendText = document.getElementById('send-text') as HTMLSpanElement;
+    const loadingSpinner = document.getElementById(
+      'loading-spinner'
+    ) as HTMLDivElement;
+    const sendButton = document.getElementById(
+      'send-button'
+    ) as HTMLButtonElement;
 
     const name = (
       document.getElementById('name') as HTMLInputElement
@@ -153,6 +190,9 @@ import Whatsapp from "../../svgs/Whatsapp.astro";
     }
 
     if (isValid) {
+      sendButton.disabled = true;
+      sendText.classList.add('hidden');
+      loadingSpinner.classList.remove('hidden');
       async function submitFormData() {
         try {
           const response = await fetch(import.meta.env.PUBLIC_APPS_SCRIPT_URL, {
@@ -170,7 +210,11 @@ import Whatsapp from "../../svgs/Whatsapp.astro";
 
           const data = await response.json();
 
+          sendButton.disabled = false;
           form.reset();
+
+          sendText.classList.remove('hidden');
+          loadingSpinner.classList.add('hidden');
 
           toast.classList.remove('hidden');
           toast.classList.add('show-toast');
@@ -185,6 +229,8 @@ import Whatsapp from "../../svgs/Whatsapp.astro";
           }, 3000);
         } catch (error) {
           console.error('Error:', error);
+          sendText.classList.remove('hidden');
+          loadingSpinner.classList.add('hidden');
         }
       }
 
