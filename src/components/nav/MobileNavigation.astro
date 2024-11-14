@@ -1,0 +1,82 @@
+---
+import Instagram from '../../svgs/Instagram.astro';
+import Linkedin from '../../svgs/Linkedin.astro';
+import UnderlineSVGNav from '../../svgs/UnderlineSVGNav.astro';
+import Whatsapp from '../../svgs/Whatsapp.astro';
+---
+
+<nav
+  id="mobile-navigation"
+  class="hidden animate-fade-in-right my-6 flex flex-col px-8 h-screen"
+>
+  <div class="flex flex-col gap-4 text-2xl uppercase">
+    <div class="flex flex-col relative py-3">
+      <a href="#coaching-section" class="hover:text-primary-600">Coaching</a>
+      <UnderlineSVGNav
+        className="absolute left-0 -bottom-2"
+        width="w-[200px]"
+        height="h-[5px]"
+      />
+    </div>
+    <div class="flex flex-col relative py-3">
+      <a href="#about-section" class="hover:text-primary-600">Sobre mí</a>
+      <UnderlineSVGNav
+        className="absolute left-0 -bottom-2"
+        width="w-[200px]"
+        height="h-[3px]"
+      />
+    </div>
+    <div class="flex flex-col relative py-3">
+      <a href="#contact-section" class="hover:text-primary-600">Contacto</a>
+      <UnderlineSVGNav
+        className="absolute left-0 -bottom-2"
+        width="w-[200px]"
+        height="h-[3px]"
+      />
+    </div>
+
+    <div class="flex items-center mt-4 gap-6">
+      <a
+        target="_blank"
+        href="https://wa.me/541133961603"
+        aria-label="Contactar por WhatsApp"><Whatsapp stroke="#2c3e50" /></a
+      >
+      <a
+        target="_blank"
+        href="https://www.instagram.com/felipe.pollitzer/"
+        aria-label="Visitar perfil de Instagram"
+        ><Instagram stroke="#2c3e50" /></a
+      >
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/felipe-pollitzer-917586188/"
+        aria-label="Visitar perfil de LinkedIn"><Linkedin stroke="#2c3e50" /></a
+      >
+    </div>
+
+    <div class="flex flex-col text-xl font-bold uppercase mt-2 tracking-widest">
+      <span class="">Felipe</span>
+      <span class="text-primary-600">Pollitzer</span>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('mobile-navigation');
+  const button = document.querySelector('button');
+  const main = document.getElementById('main-container');
+
+  const anchorLinks = nav.querySelectorAll('a');
+
+  anchorLinks.forEach((anchor) => {
+    anchor.addEventListener('click', () => {
+      setTimeout(() => {
+        button.setAttribute('data-state', 'closed');
+        button.setAttribute('aria-expanded', 'false');
+        nav.classList.add('hidden');
+        main.classList.remove('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }, 800);
+    });
+  });
+</script>

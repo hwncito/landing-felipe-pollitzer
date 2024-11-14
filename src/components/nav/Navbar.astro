@@ -2,12 +2,13 @@
 import Logo from "../../svgs/Logo.astro";
 import Hamburger from "./Hamburger.astro";
 import MobileNav from "./MobileNav.astro";
+import MobileNavigation from "./MobileNavigation.astro";
 ---
 
 <nav id="navigation-container" class="px-8 py-4 flex justify-between items-center max-w-screen-xl mx-auto">
     <Logo fill="#000" />
 
-    <ul class="gap-x-8 hidden text-lg sm:flex md:gap-x-16">
+    <ul class="gap-x-8 hidden text-lg lg:text-xl sm:flex md:gap-x-16">
         <li class="hover:text-primary-600 transition-colors"><a href="#coaching-section">Coaching</a></li>
         <li class="hover:text-primary-600 transition-colors"><a href="#about-section">Sobre Mí</a></li>
         <li><a class="bg-primary-500 hover:bg-primary-600 transition-colors px-4 py-2 rounded-md text-white" href="#contact-section">Contacto</a></li>
@@ -16,4 +17,5 @@ import MobileNav from "./MobileNav.astro";
     <Hamburger class="sm:hidden" />
 </nav>
 
-<MobileNav />
+<!-- <MobileNav /> -->
+ <MobileNavigation />
