@@ -33,12 +33,13 @@ import { Image } from 'astro:assets';
       class="relative w-[414px] lg:w-[514px] xl:w-[614px] hero-image-container xl:mr-10"
     >
       <Image
+        loading="eager"
+        fetchpriority='high'
         src="/hero-image.webp"
         alt="imagen de portada de Felipe Pollitzer"
-        width={614}
-        height={614}
+        width={876}
+        height={862}
         class="hero-image relative z-50"
-        loading="eager"
       />
       <Lightbulb
         class="absolute z-30 left-16 -top-12 w-36 h-48 lg:left-24 lg:w-44 lg:-top-10 xl:w-48 xl:left-36 xl:-top-6"
