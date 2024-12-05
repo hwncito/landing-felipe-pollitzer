@@ -7,7 +7,7 @@ import { Image } from 'astro:assets';
 ---
 
 <div
-  class="flex flex-col md:flex-row-reverse md:justify-center md:items-center"
+  class="flex flex-col md:flex-row-reverse md:justify-center md:items-center mx-auto max-w-screen-xl px-8"
 >
   <h1
     class="text-4xl text-center font-bold uppercase tracking-widest md:hidden"
@@ -30,30 +30,30 @@ import { Image } from 'astro:assets';
 
   <div class="basis-1/2 flex justify-center mt-16 md:mt-0 lg:basis-4/12">
     <div
-      class="relative w-[414px] lg:w-[514px] xl:w-[614px] hero-image-container xl:mr-10"
+      class="relative w-[350px] lg:w-[450px] xl:w-[500px] hero-image-container"
     >
       <Image
         loading="eager"
         fetchpriority='high'
-        src="/hero-image.webp"
+        src="/hero-image2.webp"
         alt="imagen de portada de Felipe Pollitzer"
-        width={876}
+        width={631}
         height={862}
         class="hero-image relative z-50"
       />
       <Lightbulb
-        class="absolute z-30 left-16 -top-12 w-36 h-48 lg:left-24 lg:w-44 lg:-top-10 xl:w-48 xl:left-36 xl:-top-6"
+        class="absolute z-30 left-16 -top-12 w-36 h-48 lg:left-24 lg:w-44 lg:-top-10 xl:w-48 xl:left-26 xl:-top-6"
       />
       <Circle
-        class="absolute z-30 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 lg:w-44 lg:h-48 lg:-translate-x-28 lg:-translate-y-20 xl:w-56 xl:h-56 xl:-translate-x-32"
+        class="absolute z-30 left-1/2 top-1/2 -translate-x-24 -translate-y-1/2 w-36 h-36 lg:w-44 lg:h-48 lg:-translate-x-32 lg:-translate-y-20 xl:w-56 xl:h-56 xl:-translate-x-40"
         stroke="#161616"
       />
       <Circle
-        class="absolute z-30 left-1/2 top-1/2 -translate-y-32 translate-x-5 w-36 h-36 lg:w-44 lg:h-48 lg:translate-x-4 lg:-translate-y-40 xl:w-56 xl:h-56"
+        class="absolute z-30 left-1/2 top-1/2 -translate-y-32 translate-x-6 w-36 h-36 lg:w-44 lg:h-48 lg:translate-x-4 lg:-translate-y-44 xl:w-56 xl:h-56"
         stroke="#161616"
       />
       <Circle
-        class="absolute z-30 left-1/2 top-1/2 -translate-y-16 translate-x-0 w-36 h-36 lg:w-44 lg:h-48 xl:w-56 xl:h-56"
+        class="absolute z-30 left-1/2 top-1/2 -translate-y-12 translate-x-10 w-36 h-36 lg:w-44 lg:h-48 lg:translate-x-10 xl:w-56 xl:h-56 xl:translate-x-6"
         stroke="#161616"
       />
     </div>
@@ -107,9 +107,7 @@ import { Image } from 'astro:assets';
 </div>
 
 <style>
-  #about-text-desktop {
-    margin-left: 3%;
-  }
+  
   .hero-image {
     mask-image: linear-gradient(black 85%, transparent);
   }
@@ -136,15 +134,15 @@ import { Image } from 'astro:assets';
 
   @media (min-width: 1024px) {
     .hero-image-container::after {
-      height: 310px;
-      width: 310px;
+      height: 340px;
+      width: 340px;
     }
   }
 
   @media (min-width: 1280px) {
     .hero-image-container::after {
-      height: 350px;
-      width: 350px;
+      height: 400px;
+      width: 400px;
     }
   }
 </style>
